@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Camel Cleaning Service</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #f0ede8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .flyer {
+    width: 480px;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.18);
+  }
+
+  /* Top accent bar */
+  .top-bar {
+    background: #E8521A;
+    padding: 32px 40px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .top-bar::before {
+    content: '';
+    position: absolute;
+    right: -40px;
+    top: -40px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+  }
+
+  .top-bar::after {
+    content: '';
+    position: absolute;
+    right: 40px;
+    bottom: -60px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    color: #ffffff;
+    line-height: 0.9;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .brand span {
+    display: block;
+    font-size: 30px;
+    letter-spacing: 8px;
+    color: rgba(255,255,255,0.85);
+    margin-top: 6px;
+  }
+
+  /* Service label */
+  .service-label {
+    padding: 18px 40px 16px;
+    border-bottom: 1px solid #f0ede8;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .service-label .icon {
+    width: 36px;
+    height: 36px;
+    background: #FFF0E8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .service-label .icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: #E8521A;
+  }
+
+  .service-label p {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #999;
+  }
+
+  /* Hero section */
+  .hero {
+    padding: 36px 40px 32px;
+    background: #fff;
+  }
+
+  .hero-question {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: #1a1a1a;
+    line-height: 1;
+    letter-spacing: 1px;
+  }
+
+  .hero-answer {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 68px;
+    color: #E8521A;
+    line-height: 1;
+    letter-spacing: 1px;
+    margin-top: 4px;
+  }
+
+  /* Services grid */
+  .services {
+    padding: 28px 40px;
+    background: #faf9f7;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .service-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    background: #fff;
+    border: 1px solid #ede9e3;
+    border-radius: 6px;
+  }
+
+  .check {
+    width: 22px;
+    height: 22px;
+    background: #E8521A;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .check svg {
+    width: 11px;
+    height: 11px;
+    stroke: #fff;
+    stroke-width: 2.5;
+  }
+
+  .service-item span {
+    font-size: 13px;
+    font-weight: 500;
+    color: #2a2a2a;
+    letter-spacing: 0.2px;
+  }
+
+  /* Pricing */
+  .pricing {
+    background: #1a1a1a;
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .pricing-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 6px;
+  }
+
+  .pricing-amount {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 60px;
+    color: #ffffff;
+    line-height: 1;
+    letter-spacing: 1px;
+  }
+
+  .pricing-amount span {
+    font-size: 24px;
+    opacity: 0.7;
+  }
+
+  .pricing-badge {
+    background: #E8521A;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 4px;
+  }
+
+  /* Contact */
+  .contact {
+    padding: 24px 40px 32px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .contact-phone {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
+    color: #E8521A;
+    letter-spacing: 2px;
+  }
+
+  .contact-sub {
+    font-size: 11px;
+    color: #aaa;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .contact-cta {
+    background: #E8521A;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 12px 22px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Footer */
+  .footer {
+    background: #111111;
+    padding: 22px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-company {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: #fff;
+    letter-spacing: 2px;
+  }
+
+  .footer-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+  }
+
+  .footer-contacts a {
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: color 0.2s;
+  }
+
+  .footer-contacts a:hover { color: #E8521A; }
+
+  .footer-divider {
+    height: 0.5px;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .footer-copy {
+    font-size: 10px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+
+  /* Bottom strip */
+  .bottom-strip {
+    height: 4px;
+    background: linear-gradient(to right, #E8521A 60%, #1a1a1a 60%);
+  }
+</style>
+</head>
+<body>
+  <div class="flyer">
+    <div class="top-bar">
+      <div class="brand">
+        CAMEL
+        <span>CLEANING SERVICE</span>
+      </div>
+    </div>
+
+    <div class="service-label">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </div>
+      <p>Apartment &amp; House Cleaning</p>
+    </div>
+
+    <div class="hero">
+      <div class="hero-question">Your House Is Dirty?</div>
+      <div class="hero-answer">I Can Help!</div>
+    </div>
+
+    <div class="services">
+      <div class="service-item">
+        <div class="check">
+          <svg viewBox="0 0 12 12" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="2 6 5 9 10 3"/>
+          </svg>
+        </div>
+        <span>Sweeping</span>
+      </div>
+      <div class="service-item">
+        <div class="check">
+          <svg viewBox="0 0 12 12" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="2 6 5 9 10 3"/>
+          </svg>
+        </div>
+        <span>Mopping</span>
+      </div>
+      <div class="service-item">
+        <div class="check">
+          <svg viewBox="0 0 12 12" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="2 6 5 9 10 3"/>
+          </svg>
+        </div>
+        <span>Bathroom Cleaning</span>
+      </div>
+      <div class="service-item">
+        <div class="check">
+          <svg viewBox="0 0 12 12" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="2 6 5 9 10 3"/>
+          </svg>
+        </div>
+        <span>Kitchen Cleaning</span>
+      </div>
+    </div>
+
+    <div class="pricing">
+      <div>
+        <div class="pricing-label">Starting from only</div>
+        <div class="pricing-amount"><span>Rs. </span>2490<span>/-</span></div>
+      </div>
+      <div class="pricing-badge">Book Now</div>
+    </div>
+
+    <div class="contact">
+      <div>
+        <div class="contact-phone">0722 636 118</div>
+        <div class="contact-sub">Call or WhatsApp</div>
+      </div>
+      <a class="contact-cta" href="tel:0722636118">Call Us</a>
+    </div>
+
+    <div class="footer">
+      <div class="footer-top">
+        <div class="footer-company">Camel Cleaning Service</div>
+        <div class="footer-contacts">
+          <a href="tel:0722636118">0722 636 118</a>
+          <a href="mailto:info@camelcleaning.lk">info@camelcleaning.lk</a>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-copy">&copy; 2026 Camel Cleaning Service. All rights reserved.</div>
+    </div>
+
+    <div class="bottom-strip"></div>
+  </div>
+</body>
+</html>
