@@ -256,6 +256,60 @@
     cursor: pointer;
   }
 
+  /* Cities */
+  .cities {
+    background: #FFF5F0;
+    padding: 20px 40px;
+    border-top: 1px solid #fde0d0;
+    border-bottom: 1px solid #fde0d0;
+  }
+
+  .cities-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .cities-label svg {
+    width: 14px;
+    height: 14px;
+    stroke: #E8521A;
+    flex-shrink: 0;
+  }
+
+  .cities-label span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #E8521A;
+  }
+
+  .cities-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .city-tag {
+    background: #fff;
+    border: 1px solid #f0c4ae;
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: #3a3a3a;
+    white-space: nowrap;
+  }
+
+  .city-tag.highlight {
+    background: #E8521A;
+    border-color: #E8521A;
+    color: #fff;
+    font-weight: 600;
+  }
+
   /* Footer */
   .footer {
     background: #111111;
@@ -312,6 +366,263 @@
     height: 4px;
     background: linear-gradient(to right, #E8521A 60%, #1a1a1a 60%);
   }
+  /* Modal overlay */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .modal-overlay.active { display: flex; }
+
+  .modal {
+    background: #fff;
+    width: 100%;
+    max-width: 460px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+    animation: slideUp 0.3s ease;
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .modal-header {
+    background: #E8521A;
+    padding: 24px 28px 20px;
+    position: relative;
+  }
+
+  .modal-header h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: #fff;
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+
+  .modal-header p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    margin-top: 4px;
+    letter-spacing: 0.3px;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: background 0.2s;
+  }
+
+  .modal-close:hover { background: rgba(255,255,255,0.35); }
+
+  .modal-body {
+    padding: 24px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-group.full { grid-column: 1 / -1; }
+
+  .form-group label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #888;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    border: 1.5px solid #e8e4df;
+    border-radius: 7px;
+    padding: 11px 14px;
+    font-size: 13.5px;
+    font-family: 'DM Sans', sans-serif;
+    color: #1a1a1a;
+    background: #faf9f7;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    width: 100%;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: #E8521A;
+    background: #fff;
+  }
+
+  .form-group textarea { resize: vertical; min-height: 80px; }
+
+  .services-check-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .service-check-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    border: 1.5px solid #e8e4df;
+    border-radius: 7px;
+    cursor: pointer;
+    background: #faf9f7;
+    transition: all 0.15s;
+  }
+
+  .service-check-item:has(input:checked) {
+    border-color: #E8521A;
+    background: #FFF5F0;
+  }
+
+  .service-check-item input[type="checkbox"] {
+    accent-color: #E8521A;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    flex-shrink: 0;
+    padding: 0;
+    border: none;
+    background: none;
+  }
+
+  .service-check-item span {
+    font-size: 12px;
+    font-weight: 500;
+    color: #2a2a2a;
+  }
+
+  .modal-divider {
+    height: 1px;
+    background: #f0ede8;
+    margin: 2px 0;
+  }
+
+  .form-section-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #bbb;
+  }
+
+  .btn-submit {
+    background: #E8521A;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s, transform 0.1s;
+    margin-top: 4px;
+  }
+
+  .btn-submit:hover { background: #d04816; }
+  .btn-submit:active { transform: scale(0.98); }
+
+  .success-msg {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 28px;
+    gap: 14px;
+  }
+
+  .success-icon {
+    width: 64px;
+    height: 64px;
+    background: #FFF5F0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .success-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: #E8521A;
+    stroke-width: 2;
+  }
+
+  .success-msg h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: #1a1a1a;
+    letter-spacing: 1px;
+  }
+
+  .success-msg p {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.6;
+    max-width: 280px;
+  }
+
+  .pricing-badge {
+    background: #E8521A;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s;
+  }
+
+  .pricing-badge:hover { background: #d04816; }
 </style>
 </head>
 <body>
@@ -371,6 +682,38 @@
         </div>
         <span>Kitchen Cleaning</span>
       </div>
+      <div class="service-item">
+        <div class="check">
+          <svg viewBox="0 0 12 12" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="2 6 5 9 10 3"/>
+          </svg>
+        </div>
+        <span>Party Express Clean</span>
+      </div>
+      <div class="service-item">
+        <div class="check">
+          <svg viewBox="0 0 12 12" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="2 6 5 9 10 3"/>
+          </svg>
+        </div>
+        <span>Laundry</span>
+      </div>
+      <div class="service-item">
+        <div class="check">
+          <svg viewBox="0 0 12 12" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="2 6 5 9 10 3"/>
+          </svg>
+        </div>
+        <span>Window Cleaning</span>
+      </div>
+      <div class="service-item">
+        <div class="check">
+          <svg viewBox="0 0 12 12" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="2 6 5 9 10 3"/>
+          </svg>
+        </div>
+        <span>Dusting &amp; Wiping</span>
+      </div>
     </div>
 
     <div class="pricing">
@@ -378,7 +721,7 @@
         <div class="pricing-label">Starting from only</div>
         <div class="pricing-amount"><span>Rs. </span>2490<span>/-</span></div>
       </div>
-      <div class="pricing-badge">Book Now</div>
+      <button class="pricing-badge" onclick="openModal()">Book Now</button>
     </div>
 
     <div class="contact">
@@ -387,6 +730,25 @@
         <div class="contact-sub">Call or WhatsApp</div>
       </div>
       <a class="contact-cta" href="tel:0722636118">Call Us</a>
+    </div>
+
+    <div class="cities">
+      <div class="cities-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <span>Available Areas in Sri Lanka</span>
+      </div>
+      <div class="cities-tags">
+        <div class="city-tag">Homagama</div>
+        <div class="city-tag">Kaduwela</div>
+        <div class="city-tag">Malabe</div>
+        <div class="city-tag">Kottawa</div>
+        <div class="city-tag">Maharagama</div>
+        <div class="city-tag">Athurugiriya</div>
+        <div class="city-tag highlight">Colombo 1–15</div>
+      </div>
     </div>
 
     <div class="footer">
@@ -403,5 +765,171 @@
 
     <div class="bottom-strip"></div>
   </div>
+  <!-- Booking Modal -->
+  <div class="modal-overlay" id="bookingModal" onclick="handleOverlayClick(event)">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Book a Cleaning</h2>
+        <p>Fill in your details and we'll confirm shortly</p>
+        <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+      </div>
+
+      <div class="modal-body" id="modalForm">
+
+        <div class="form-section-title">Your Details</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="f-name" placeholder="e.g. Amal Perera">
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="f-phone" placeholder="07X XXX XXXX">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="f-email" placeholder="you@example.com">
+        </div>
+
+        <div class="modal-divider"></div>
+        <div class="form-section-title">Booking Details</div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Preferred Date</label>
+            <input type="date" id="f-date">
+          </div>
+          <div class="form-group">
+            <label>Preferred Time</label>
+            <input type="time" id="f-time">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>City / Area</label>
+          <select id="f-city">
+            <option value="">Select your area</option>
+            <option>Homagama</option>
+            <option>Kaduwela</option>
+            <option>Malabe</option>
+            <option>Kottawa</option>
+            <option>Maharagama</option>
+            <option>Athurugiriya</option>
+            <option>Colombo 1</option><option>Colombo 2</option><option>Colombo 3</option>
+            <option>Colombo 4</option><option>Colombo 5</option><option>Colombo 6</option>
+            <option>Colombo 7</option><option>Colombo 8</option><option>Colombo 9</option>
+            <option>Colombo 10</option><option>Colombo 11</option><option>Colombo 12</option>
+            <option>Colombo 13</option><option>Colombo 14</option><option>Colombo 15</option>
+          </select>
+        </div>
+
+        <div class="modal-divider"></div>
+        <div class="form-section-title">Services Required</div>
+
+        <div class="services-check-group">
+          <label class="service-check-item"><input type="checkbox" value="Sweeping"><span>Sweeping</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Mopping"><span>Mopping</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Bathroom Cleaning"><span>Bathroom Cleaning</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Kitchen Cleaning"><span>Kitchen Cleaning</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Party Express Clean"><span>Party Express Clean</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Laundry"><span>Laundry</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Window Cleaning"><span>Window Cleaning</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Dusting & Wiping"><span>Dusting &amp; Wiping</span></label>
+        </div>
+
+        <div class="form-group">
+          <label>Additional Notes</label>
+          <textarea id="f-notes" placeholder="Any special instructions, property size, access details…"></textarea>
+        </div>
+
+        <div id="form-error" style="display:none; font-size:12px; color:#E8521A; font-weight:600;"></div>
+
+        <button class="btn-submit" onclick="submitBooking()">Confirm Booking →</button>
+      </div>
+
+      <!-- Success state -->
+      <div class="success-msg" id="successMsg">
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+        </div>
+        <h3>Booking Received!</h3>
+        <p>Thank you! We'll call you within 30 minutes to confirm your appointment.</p>
+        <button class="btn-submit" style="max-width:180px; margin-top:4px;" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('bookingModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      // reset
+      document.getElementById('modalForm').style.display = 'flex';
+      document.getElementById('successMsg').style.display = 'none';
+      document.getElementById('form-error').style.display = 'none';
+    }
+
+    function closeModal() {
+      document.getElementById('bookingModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function handleOverlayClick(e) {
+      if (e.target === document.getElementById('bookingModal')) closeModal();
+    }
+
+    const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzQG7_gMxQmCds5S-agEHvdCyMtoHVl_VkCPgsRGfsoIeKzjJSxSIW-hzgjYlX-BA4LZQ/exec';
+
+    function submitBooking() {
+      const name  = document.getElementById('f-name').value.trim();
+      const phone = document.getElementById('f-phone').value.trim();
+      const email = document.getElementById('f-email').value.trim();
+      const date  = document.getElementById('f-date').value;
+      const time  = document.getElementById('f-time').value;
+      const city  = document.getElementById('f-city').value;
+      const notes = document.getElementById('f-notes').value.trim();
+      const err   = document.getElementById('form-error');
+
+      // Validation
+      if (!name || !phone || !date || !city) {
+        err.textContent = '⚠ Please fill in Name, Phone, Date and City to continue.';
+        err.style.display = 'block';
+        return;
+      }
+
+      // Collect checked services
+      const checked = document.querySelectorAll('.services-check-group input:checked');
+      const services = Array.from(checked).map(c => c.value).join(', ') || 'Not specified';
+
+      // Disable button & show loading
+      const btn = document.querySelector('.btn-submit');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      err.style.display = 'none';
+
+      const payload = { name, phone, email, date, time, city, services, notes };
+
+      fetch(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(() => {
+        document.getElementById('modalForm').style.display = 'none';
+        document.getElementById('successMsg').style.display = 'flex';
+      })
+      .catch(() => {
+        err.textContent = '⚠ Something went wrong. Please call us on 0722 636 118.';
+        err.style.display = 'block';
+        btn.textContent = 'Confirm Booking →';
+        btn.disabled = false;
+      });
+    }
+  </script>
 </body>
 </html>
