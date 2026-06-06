@@ -112,68 +112,481 @@
   .hero {
     padding: 36px 40px 32px;
     background: #fff;
+    border-bottom: 1px solid #f0ede8;
   }
 
   .hero-question {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 48px;
+    font-size: 56px;
     color: #1a1a1a;
     line-height: 1;
     letter-spacing: 1px;
   }
 
-  .hero-answer {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 68px;
-    color: #E8521A;
-    line-height: 1;
-    letter-spacing: 1px;
-    margin-top: 4px;
+  .hero-sub {
+    font-size: 13.5px;
+    color: #777;
+    line-height: 1.6;
+    margin-top: 12px;
+    max-width: 340px;
   }
 
-  /* Services grid */
-  .services {
-    padding: 28px 40px;
-    background: #faf9f7;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .service-item {
+  .hero-bottom {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 14px 16px;
-    background: #fff;
-    border: 1px solid #ede9e3;
-    border-radius: 6px;
+    justify-content: space-between;
+    margin-top: 22px;
   }
 
-  .check {
-    width: 22px;
-    height: 22px;
+  .hero-price {
+    font-size: 13px;
+    color: #999;
+    font-weight: 500;
+  }
+
+  .hero-price strong {
+    font-size: 22px;
+    font-weight: 700;
+    color: #E8521A;
+    letter-spacing: 0.3px;
+  }
+
+  .hero-book-btn {
     background: #E8521A;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 13px 26px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .hero-book-btn:hover { background: #d04816; }
+  .hero-book-btn:active { transform: scale(0.97); }
+
+  /* How It Works */
+  .hiw-section {
+    padding: 26px 28px 24px;
+    background: #1a1a1a;
+    border-bottom: 1px solid #2a2a2a;
+  }
+
+  .hiw-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .hiw-header .emoji { font-size: 18px; }
+
+  .hiw-header h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.2px;
+  }
+
+  .hiw-steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 6px;
+  }
+
+  .hiw-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+  }
+
+  .hiw-icon {
+    font-size: 28px;
+    width: 56px;
+    height: 56px;
+    background: rgba(232,82,26,0.15);
+    border: 1.5px solid rgba(232,82,26,0.3);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
   }
 
-  .check svg {
-    width: 11px;
-    height: 11px;
-    stroke: #fff;
-    stroke-width: 2.5;
+  .hiw-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    color: #E8521A;
+    letter-spacing: 1px;
   }
 
-  .service-item span {
+  .hiw-title {
     font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .hiw-desc {
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.5;
+  }
+
+  .hiw-arrow {
+    font-size: 18px;
+    color: #E8521A;
+    margin-top: 16px;
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+
+  /* Price Estimator */
+  .estimator-section {
+    padding: 24px 28px;
+    background: #fff;
+    border-bottom: 1px solid #f0ede8;
+  }
+
+  .estimator-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .estimator-header .emoji { font-size: 18px; }
+
+  .estimator-header h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+    flex: 1;
+  }
+
+  .est-sub {
+    font-size: 11px;
+    color: #bbb;
+    font-weight: 500;
+  }
+
+  .est-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .est-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 11px;
+    border: 1.5px solid #ede9e3;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #faf9f7;
+    transition: all 0.15s;
+  }
+
+  .est-item:has(input:checked) {
+    border-color: #E8521A;
+    background: #FFF5F0;
+  }
+
+  .est-item input[type="checkbox"] {
+    accent-color: #E8521A;
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  .est-name {
+    font-size: 11.5px;
     font-weight: 500;
     color: #2a2a2a;
-    letter-spacing: 0.2px;
+    flex: 1;
   }
+
+  .est-price {
+    font-size: 11px;
+    font-weight: 700;
+    color: #E8521A;
+    white-space: nowrap;
+  }
+
+  .est-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+  }
+
+  .est-total-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 2px;
+  }
+
+  .est-total-hint {
+    display: block;
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .est-total-amount {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: #fff;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+  }
+
+  .est-total-amount.has-value { color: #E8521A; }
+
+  .est-book-btn {
+    width: 100%;
+    background: #E8521A;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 13px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .est-book-btn:hover { background: #d04816; }
+  .est-book-btn:disabled {
+    background: #ddd;
+    color: #aaa;
+    cursor: not-allowed;
+  }
+  .price-section {
+    padding: 22px 28px 18px;
+    background: #fff;
+    border-bottom: 1px solid #f0ede8;
+  }
+
+  .price-section-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .price-section-header .emoji { font-size: 20px; }
+
+  .price-section-header h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .price-grid.cols4 { grid-template-columns: repeat(4, 1fr); }
+
+  .price-card {
+    background: #faf9f7;
+    border: 1.5px solid #ede9e3;
+    border-radius: 10px;
+    padding: 14px 10px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .price-card:hover {
+    border-color: #E8521A;
+    box-shadow: 0 4px 16px rgba(232,82,26,0.1);
+  }
+
+  .price-card .p-icon { font-size: 28px; line-height: 1; }
+
+  .price-card .p-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #2a2a2a;
+    line-height: 1.3;
+  }
+
+  .price-card .p-price {
+    font-size: 13px;
+    font-weight: 700;
+    color: #E8521A;
+  }
+
+  /* Combo section */
+  .combo-section {
+    padding: 22px 28px 24px;
+    background: #fffbf0;
+    border-bottom: 1px solid #f0ede8;
+  }
+
+  .combo-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .combo-header .emoji { font-size: 20px; }
+
+  .combo-header h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+
+  .combo-header .save-tag {
+    background: #E8521A;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 3px 8px;
+    border-radius: 20px;
+  }
+
+  .combo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .combo-card {
+    background: #fff;
+    border: 1.5px solid #f0d8a8;
+    border-radius: 10px;
+    padding: 18px 10px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+    position: relative;
+  }
+
+  .combo-badge {
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f5a623;
+    color: #fff;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  /* Price table */
+  .price-table {
+    border: 1.5px solid #ede9e3;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .pt-row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    color: #2a2a2a;
+    border-bottom: 1px solid #f0ede8;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .pt-row > span:first-child { flex: 1; min-width: 0; }
+  .pt-row > span:nth-child(2) { width: 90px; color: #999; font-size: 11px; text-align: center; }
+  .pt-row > span:nth-child(3) { width: 80px; font-weight: 700; color: #E8521A; text-align: right; }
+  .pt-row:last-child { border-bottom: none; }
+
+  .pt-row.pt-head {
+    background: #faf9f7;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #aaa;
+    padding: 8px 14px;
+  }
+
+  .pt-row.pt-head span { color: #aaa !important; font-weight: 700; }
+
+  .pt-row.pt-accordion {
+    cursor: pointer;
+    flex-wrap: wrap;
+    transition: background 0.2s;
+  }
+
+  .pt-row.pt-accordion:hover { background: #fff8f5; }
+  .pt-row.pt-accordion.open { background: #fff8f5; border-bottom: none; }
+
+  .pt-row.pt-accordion .arr {
+    font-style: normal;
+    font-size: 11px;
+    color: #ccc;
+    display: inline-block;
+    transition: transform 0.25s;
+    margin-left: 4px;
+  }
+
+  .pt-row.pt-accordion.open .arr { transform: rotate(180deg); color: #E8521A; }
+
+  .pt-desc {
+    display: none;
+    width: 100%;
+    font-size: 12px;
+    color: #777;
+    line-height: 1.6;
+    padding: 2px 14px 12px;
+    border-bottom: 1px solid #f0ede8;
+  }
+
+  .pt-row.pt-accordion.open .pt-desc { display: block; }
+
+  .combo-card .c-duration {
+    font-size: 10px;
+    font-weight: 600;
+    color: #f5a623;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .combo-card .c-icon { font-size: 26px; line-height: 1; }
+  .combo-card .c-name { font-size: 11px; font-weight: 600; color: #555; line-height: 1.4; }
+  .combo-card .c-price { font-size: 13px; font-weight: 700; color: #E8521A; }
 
   /* Pricing */
   .pricing {
@@ -630,96 +1043,118 @@
     <div class="top-bar">
       <div class="brand">
         CAMEL
-        <span>CLEANING SERVICE</span>
       </div>
     </div>
 
-    <div class="service-label">
-      <div class="icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-          <polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
-      </div>
-      <p>Apartment &amp; House Cleaning</p>
-    </div>
 
     <div class="hero">
-      <div class="hero-question">Your House Is Dirty?</div>
-      <div class="hero-answer">I Can Help!</div>
+      <div class="hero-question">House help,<br><span style="color:#E8521A;">in minutes.</span></div>
+      <div class="hero-sub">From dish washing to deep cleans — book a trusted helper for your home.</div>
+      <div class="hero-bottom">
+        <div class="hero-price">Starting at <strong>Rs. 390</strong></div>
+        <button class="hero-book-btn" onclick="openModal()">Book Now →</button>
+      </div>
     </div>
 
-    <div class="services">
-      <div class="service-item">
-        <div class="check">
-          <svg viewBox="0 0 12 12" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="2 6 5 9 10 3"/>
-          </svg>
-        </div>
-        <span>Sweeping</span>
+
+
+    <!-- Individual Tasks -->
+    <div class="price-section">
+      <div class="price-section-header">
+        <span class="emoji">🧹</span>
+        <h3>Individual Tasks</h3>
       </div>
-      <div class="service-item">
-        <div class="check">
-          <svg viewBox="0 0 12 12" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="2 6 5 9 10 3"/>
-          </svg>
+      <div class="price-table">
+        <div class="pt-row pt-head">
+          <span>Task</span><span>Time</span><span>Price</span>
         </div>
-        <span>Mopping</span>
+        <div class="pt-row pt-accordion" onclick="toggleDesc(this)">
+          <span>🍽️ Dish Washing</span><span>20–30 min</span><span>Rs. 490 <i class="arr">▾</i></span>
+          <div class="pt-desc">All dishes, pots, and utensils washed, rinsed and neatly stacked. Includes wiping the sink area clean.</div>
+        </div>
+        <div class="pt-row pt-accordion" onclick="toggleDesc(this)">
+          <span>🧹 Sweeping &amp; Mopping</span><span>45–60 min</span><span>Rs. 990 <i class="arr">▾</i></span>
+          <div class="pt-desc">Full sweep and wet mop of all floor areas in a small apartment. Removes dust, dirt and light stains.</div>
+        </div>
+        <div class="pt-row pt-accordion" onclick="toggleDesc(this)">
+          <span>🚽 Bathroom Cleaning</span><span>30–45 min</span><span>Rs. 790 <i class="arr">▾</i></span>
+          <div class="pt-desc">Toilet, sink, mirror and floor scrubbed and disinfected. Includes wiping tiles and removing soap scum.</div>
+        </div>
+        <div class="pt-row pt-accordion" onclick="toggleDesc(this)">
+          <span>👕 Laundry (wash &amp; hang)</span><span>30 min</span><span>Rs. 590 <i class="arr">▾</i></span>
+          <div class="pt-desc">Load sorted, machine washed and hung to dry. Clothes handled with care. Detergent provided by customer.</div>
+        </div>
+        <div class="pt-row pt-accordion" onclick="toggleDesc(this)">
+          <span>👔 Ironing (10–15 items)</span><span>30 min</span><span>Rs. 590 <i class="arr">▾</i></span>
+          <div class="pt-desc">Up to 15 clothing items neatly ironed and folded or hung. Suitable for shirts, trousers, and blouses.</div>
+        </div>
+        <div class="pt-row pt-accordion" onclick="toggleDesc(this)">
+          <span>🍳 Kitchen Cleaning</span><span>45–60 min</span><span>Rs. 1,090 <i class="arr">▾</i></span>
+          <div class="pt-desc">Countertops, stovetop, sink and cabinet fronts cleaned and degreased. Includes wiping small appliances.</div>
+        </div>
+        <div class="pt-row pt-accordion" onclick="toggleDesc(this)">
+          <span>🪟 Window Cleaning</span><span>30–45 min</span><span>Rs. 790 <i class="arr">▾</i></span>
+          <div class="pt-desc">Interior window panes wiped streak-free. Includes window sills and frames. Up to 6 standard windows.</div>
+        </div>
+        <div class="pt-row pt-accordion" onclick="toggleDesc(this)">
+          <span>🌿 Balcony Cleaning</span><span>20–30 min</span><span>Rs. 490 <i class="arr">▾</i></span>
+          <div class="pt-desc">Balcony floor swept and mopped, railings wiped down, and any clutter tidied. Leaves it fresh and neat.</div>
+        </div>
+        <div class="pt-row pt-accordion" onclick="toggleDesc(this)">
+          <span>🛏️ Bed Making &amp; Room Tidy</span><span>20 min</span><span>Rs. 390 <i class="arr">▾</i></span>
+          <div class="pt-desc">Bed made with fresh or existing sheets, pillows arranged, floor items tidied and surfaces dusted.</div>
+        </div>
+        <div class="pt-row pt-accordion" onclick="toggleDesc(this)">
+          <span>❄️ Fridge Cleaning</span><span>30 min</span><span>Rs. 690 <i class="arr">▾</i></span>
+          <div class="pt-desc">All shelves, drawers and door compartments wiped clean inside. Expired items flagged. Leaves fridge odour-free.</div>
+        </div>
+        <div class="pt-row pt-accordion" onclick="toggleDesc(this)">
+          <span>🔥 Oven/Microwave Cleaning</span><span>30 min</span><span>Rs. 690 <i class="arr">▾</i></span>
+          <div class="pt-desc">Interior and exterior of oven or microwave cleaned and degreased. Removes food residue and stains safely.</div>
+        </div>
+        <div class="pt-row pt-accordion" onclick="toggleDesc(this)">
+          <span>📦 Packing/Unpacking</span><span>1 hour</span><span>Rs. 1,290 <i class="arr">▾</i></span>
+          <div class="pt-desc">Careful packing or unpacking of household items into boxes or shelves. Ideal for moving in or out.</div>
+        </div>
       </div>
-      <div class="service-item">
-        <div class="check">
-          <svg viewBox="0 0 12 12" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="2 6 5 9 10 3"/>
-          </svg>
-        </div>
-        <span>Bathroom Cleaning</span>
+    </div>
+
+    <!-- Combo Packages -->
+    <div class="combo-section">
+      <div class="combo-header">
+        <span class="emoji">⭐</span>
+        <h3>Service Packages</h3>
+        <span class="save-tag">Best Value!</span>
       </div>
-      <div class="service-item">
-        <div class="check">
-          <svg viewBox="0 0 12 12" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="2 6 5 9 10 3"/>
-          </svg>
+      <div class="combo-grid">
+        <div class="combo-card">
+          <span class="combo-badge">Quick Help</span>
+          <div class="c-icon">⚡</div>
+          <div class="c-name">Dishes · Laundry · Room Tidy</div>
+          <div class="c-duration">1 hour</div>
+          <div class="c-price">Rs. 990–1,290</div>
         </div>
-        <span>Kitchen Cleaning</span>
-      </div>
-      <div class="service-item">
-        <div class="check">
-          <svg viewBox="0 0 12 12" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="2 6 5 9 10 3"/>
-          </svg>
+        <div class="combo-card">
+          <span class="combo-badge">Standard</span>
+          <div class="c-icon">🏠</div>
+          <div class="c-name">Sweep &amp; Mop · Bathroom · Dishes</div>
+          <div class="c-duration">2 hours</div>
+          <div class="c-price">Rs. 2,190–2,490</div>
         </div>
-        <span>Party Express Clean</span>
-      </div>
-      <div class="service-item">
-        <div class="check">
-          <svg viewBox="0 0 12 12" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="2 6 5 9 10 3"/>
-          </svg>
+        <div class="combo-card">
+          <span class="combo-badge">Deep Help</span>
+          <div class="c-icon">💎</div>
+          <div class="c-name">Kitchen · Bathroom · Windows · Laundry</div>
+          <div class="c-duration">3 hours</div>
+          <div class="c-price">Rs. 3,190–3,690</div>
         </div>
-        <span>Laundry</span>
-      </div>
-      <div class="service-item">
-        <div class="check">
-          <svg viewBox="0 0 12 12" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="2 6 5 9 10 3"/>
-          </svg>
-        </div>
-        <span>Window Cleaning</span>
-      </div>
-      <div class="service-item">
-        <div class="check">
-          <svg viewBox="0 0 12 12" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="2 6 5 9 10 3"/>
-          </svg>
-        </div>
-        <span>Dusting &amp; Wiping</span>
       </div>
     </div>
 
     <div class="pricing">
       <div>
         <div class="pricing-label">Starting from only</div>
-        <div class="pricing-amount"><span>Rs. </span>2490<span>/-</span></div>
+        <div class="pricing-amount"><span>Rs. </span>390<span>/-</span></div>
       </div>
       <button class="pricing-badge" onclick="openModal()">Book Now</button>
     </div>
@@ -829,14 +1264,21 @@
         <div class="form-section-title">Services Required</div>
 
         <div class="services-check-group">
-          <label class="service-check-item"><input type="checkbox" value="Sweeping"><span>Sweeping</span></label>
-          <label class="service-check-item"><input type="checkbox" value="Mopping"><span>Mopping</span></label>
-          <label class="service-check-item"><input type="checkbox" value="Bathroom Cleaning"><span>Bathroom Cleaning</span></label>
-          <label class="service-check-item"><input type="checkbox" value="Kitchen Cleaning"><span>Kitchen Cleaning</span></label>
-          <label class="service-check-item"><input type="checkbox" value="Party Express Clean"><span>Party Express Clean</span></label>
-          <label class="service-check-item"><input type="checkbox" value="Laundry"><span>Laundry</span></label>
-          <label class="service-check-item"><input type="checkbox" value="Window Cleaning"><span>Window Cleaning</span></label>
-          <label class="service-check-item"><input type="checkbox" value="Dusting & Wiping"><span>Dusting &amp; Wiping</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Dish Washing – Rs.490"><span>🍽️ Dish Washing – Rs.490</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Sweeping & Mopping – Rs.990"><span>🧹 Sweep &amp; Mop – Rs.990</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Bathroom Cleaning – Rs.790"><span>🚽 Bathroom – Rs.790</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Laundry – Rs.590"><span>👕 Laundry – Rs.590</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Ironing (10-15 items) – Rs.590"><span>👔 Ironing – Rs.590</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Kitchen Cleaning – Rs.1090"><span>🍳 Kitchen – Rs.1,090</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Window Cleaning – Rs.790"><span>🪟 Windows – Rs.790</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Balcony Cleaning – Rs.490"><span>🌿 Balcony – Rs.490</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Bed Making & Room Tidy – Rs.390"><span>🛏️ Room Tidy – Rs.390</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Fridge Cleaning – Rs.690"><span>❄️ Fridge – Rs.690</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Oven/Microwave Cleaning – Rs.690"><span>🔥 Oven/Microwave – Rs.690</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Packing/Unpacking – Rs.1290"><span>📦 Packing – Rs.1,290</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Package: Quick Help (1hr) – Rs.990-1290"><span>⚡ Quick Help Pkg</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Package: Standard Home Refresh (2hr) – Rs.2190-2490"><span>🏠 Standard Pkg</span></label>
+          <label class="service-check-item"><input type="checkbox" value="Package: Deep Home Help (3hr) – Rs.3190-3690"><span>💎 Deep Help Pkg</span></label>
         </div>
 
         <div class="form-group">
@@ -864,6 +1306,56 @@
   </div>
 
   <script>
+    function calcTotal() {
+      const checks = document.querySelectorAll('#estGrid input:checked');
+      const total = Array.from(checks).reduce((sum, c) => sum + parseInt(c.dataset.price), 0);
+      const amountEl = document.getElementById('estAmount');
+      const hintEl = document.getElementById('estHint');
+      const bookBtn = document.querySelector('.est-book-btn');
+
+      if (total > 0) {
+        amountEl.textContent = 'Rs. ' + total.toLocaleString();
+        amountEl.classList.add('has-value');
+        hintEl.textContent = checks.length + ' service' + (checks.length > 1 ? 's' : '') + ' selected';
+        bookBtn.disabled = false;
+      } else {
+        amountEl.textContent = 'Rs. 0';
+        amountEl.classList.remove('has-value');
+        hintEl.textContent = 'Select services above';
+        bookBtn.disabled = true;
+      }
+    }
+
+    function bookFromEstimator() {
+      // Pre-tick matching checkboxes in the booking modal
+      const selected = Array.from(document.querySelectorAll('#estGrid input:checked'))
+        .map(c => c.closest('label').querySelector('.est-name').textContent.trim());
+      openModal();
+      // After modal opens, check matching services
+      setTimeout(() => {
+        document.querySelectorAll('.services-check-group input[type="checkbox"]').forEach(cb => {
+          const label = cb.value.toLowerCase();
+          selected.forEach(s => {
+            const clean = s.replace(/[^\w\s]/g,'').trim().toLowerCase();
+            if (label.includes(clean.split(' ')[1] || clean.split(' ')[0])) cb.checked = true;
+          });
+        });
+      }, 100);
+    }
+
+    // Init estimator button state
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.querySelector('.est-book-btn');
+      if (btn) btn.disabled = true;
+    });
+
+    function toggleDesc(row) {
+      const isOpen = row.classList.contains('open');
+      // close all
+      document.querySelectorAll('.pt-accordion.open').forEach(r => r.classList.remove('open'));
+      if (!isOpen) row.classList.add('open');
+    }
+
     function openModal() {
       document.getElementById('bookingModal').classList.add('active');
       document.body.style.overflow = 'hidden';
