@@ -1036,6 +1036,76 @@
   }
 
   .pricing-badge:hover { background: #d04816; }
+  /* ===== MOBILE RESPONSIVE ===== */
+  @media (max-width: 520px) {
+    body {
+      padding: 0;
+      background: #fff;
+      align-items: flex-start;
+    }
+
+    .flyer {
+      width: 100%;
+      box-shadow: none;
+    }
+
+    /* Top bar */
+    .top-bar { padding: 22px 20px 18px; }
+    .brand { font-size: 52px; }
+
+    /* Hero */
+    .hero { padding: 24px 20px 20px; }
+    .hero-question { font-size: 40px; }
+    .hero-sub { font-size: 13px; }
+    .hero-bottom { flex-direction: column; align-items: flex-start; gap: 14px; }
+    .hero-book-btn { width: 100%; text-align: center; }
+
+    /* Pricing bar */
+    .pricing { padding: 20px; flex-direction: column; align-items: flex-start; gap: 14px; }
+    .pricing-amount { font-size: 48px; }
+    .pricing-badge { width: 100%; text-align: center; padding: 12px; font-size: 13px; }
+
+    /* Contact */
+    .contact { padding: 18px 20px 22px; flex-direction: column; align-items: flex-start; gap: 14px; }
+    .contact-phone { font-size: 30px; }
+    .contact-cta { width: 100%; text-align: center; padding: 13px; }
+
+    /* Price sections */
+    .price-section { padding: 18px 16px 16px; }
+    .price-grid { grid-template-columns: repeat(2, 1fr); }
+    .price-grid.cols4 { grid-template-columns: repeat(2, 1fr); }
+
+    /* Combo */
+    .combo-section { padding: 18px 16px 20px; }
+    .combo-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* Price table */
+    .pt-row { padding: 10px 12px; font-size: 12px; }
+    .pt-row > span:nth-child(2) { width: 70px; font-size: 10px; }
+    .pt-row > span:nth-child(3) { width: 70px; font-size: 12px; }
+    .pt-desc { font-size: 11.5px; padding: 2px 12px 12px; }
+
+    /* Cities */
+    .cities { padding: 16px 16px; }
+    .cities-tags { gap: 6px; }
+    .city-tag { font-size: 11px; padding: 4px 10px; }
+
+    /* Footer */
+    .footer { padding: 18px 16px; }
+    .footer-top { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .footer-contacts { align-items: flex-start; }
+    .footer-company { font-size: 17px; }
+
+    /* Modal */
+    .modal { max-width: 100%; margin: 0; border-radius: 16px 16px 0 0; }
+    .modal-overlay { align-items: flex-end; padding: 0; }
+    .modal-header { padding: 20px 20px 16px; }
+    .modal-header h2 { font-size: 26px; }
+    .modal-body { padding: 18px 20px 24px; max-height: 75vh; }
+    .form-row { grid-template-columns: 1fr; }
+    .services-check-group { grid-template-columns: 1fr 1fr; }
+  }
+
 </style>
 </head>
 <body>
